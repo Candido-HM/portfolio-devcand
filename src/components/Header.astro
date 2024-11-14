@@ -3,7 +3,8 @@ import ThemeToggle from "./ThemeToggle.astro";
 ---
 <header class="w-full sm:w-3/4 max-w-screen-lg h-auto py-2 mb-8">
     <nav class="w-auto h-12 my-3 flex items-center justify-evenly
-         bg-zinc-50 border border-zinc-200 rounded-lg">
+         bg-zinc-50 border border-zinc-200 rounded-lg
+         dark:bg-zinc-800 dark:border-zinc-500 dark:text-neutral-300">
         <div class="flex">
             <a href="#">
                 <img class="w-12" src="/favicon.svg" alt="icon">
@@ -33,7 +34,7 @@ import ThemeToggle from "./ThemeToggle.astro";
                 <span class="hidden sm:block ml-1">Contacto</span>
             </a>
         </div>
-        <!-- <ThemeToggle /> -->
+        <ThemeToggle /> 
         <!-- <div class="flex h-full"> -->
             <!-- <button id="theme-toggle" class="flex">
                 <img class="w-7" src="/icon-light.svg" alt="LightMode"> 
