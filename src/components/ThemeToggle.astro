@@ -1,16 +1,15 @@
 
 <div class="inline-flex items-center">
-    <!-- <Icon class="w-4 h-4 mr-2" name="heroicons-outline:sun" /> -->
-    <button id="themeSwitch" class="px-3 py-2 rounded text-white bg-blue-500 hover:bg-blue-700">
-      <!-- {localStorage.getItem("theme") === "dark" ? "Light Theme" : "Dark Theme"} -->
+    <button class="w-6 h-6 bg-[url(/icon-light.svg)] dark:bg-[url(/icon-dark.svg)] 
+      bg-contain bg-no-repeat px-1 py-1" id="themeSwitch">
     </button>
   </div>
 
-  <!-- <style>
+<style>
     :global(.dark) {
       color-scheme: dark;
     }
-  </style> -->
+</style>  
   
   <script>
     const themeButton = document.getElementById("themeSwitch");
@@ -22,21 +21,17 @@
     if (theme !== null) {
       document.documentElement.classList.remove("light", "dark");
       document.documentElement.classList.add(theme);
-      themeButton.textContent = theme === "dark" ? "Dark Theme" : "Light Theme";
     } else {
       document.documentElement.classList.add(systemTheme);
-      themeButton.textContent = systemTheme === "dark" ? "Dark Theme" : "Light Theme";
     }
   
     function updateTheme(newTheme: any) {
       document.documentElement.classList.remove("light", "dark");
       document.documentElement.classList.add(newTheme);
       localStorage.setItem("theme", newTheme);   
-  
-      themeButton.textContent = newTheme === "dark" ? "Dark Theme" : "Light Theme";
     }
   
-    themeButton.addEventListener("click", () => {
+    themeButton?.addEventListener("click", () => {
       const currentTheme = localStorage.getItem("theme");
       const newTheme = currentTheme === "dark" ? "light" : "dark";
       updateTheme(newTheme);
