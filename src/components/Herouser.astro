@@ -1,7 +1,7 @@
 ---
 import BtnCv from "./BtnCv.astro";
 ---
-<section class="h-auto mb-10 p-3 flex flex-col lg:flex-row lg:items-center">
+<section class="h-auto mb-10 p-3 flex flex-col lg:flex-row lg:items-center mt-20 lg:mt-32">
     <article class="grow-0 p-2 flex justify-center">
         <img class="w-40 rounded-full border-2 border-zinc-200 dark:border-neutral-700 aspect-auto" 
         src="/img-user.webp" alt="candido-dev">
@@ -18,16 +18,15 @@ import BtnCv from "./BtnCv.astro";
             Ing. Informática | Desarrollador web
         </p>
         <div class="w-full h-12 flex justify-center m-5">
-            <a class="flex px-12 mx-3 bg-sky-700 
-                hover:bg-transparent hover:border hover:border-sky-700 rounded-full" 
+            <a class="flex px-12 mx-3 bg-sky-700 text-white 
+                hover:bg-transparent hover:border hover:border-sky-700 
+                hover:text-zinc-900 dark:hover:text-zinc-300 rounded-full" 
                 href="mailto:candidohm99@gmail.com">
-                <span class="flex items-center text-white 
-                    hover:text-zinc-900 dark:hover:text-zinc-300">
+                <span class="flex items-center">
                     Contáctame
                 </span>
             </a>
             <BtnCv />
         </div>
     </article>
-    
 </section>
