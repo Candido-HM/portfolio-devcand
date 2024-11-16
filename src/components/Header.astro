@@ -58,7 +58,7 @@ import ThemeToggle from "./ThemeToggle.astro";
 	  menuLinks.forEach(link => {
 		link.addEventListener('click', (event) => {
 		  event.preventDefault();
-		  const targetId = link.getAttribute('href').substring(1);
+		  const targetId = link.getAttribute('href')!.substring(1);
 		  const targetSection = document.getElementById(targetId);
 		  if (targetSection) {
 			const topPosition = targetSection.offsetTop - offset;
