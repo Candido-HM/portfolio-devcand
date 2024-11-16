@@ -2,7 +2,7 @@
 import ThemeToggle from "./ThemeToggle.astro";
 ---
 <header class="fixed top-0 z-10 w-full sm:w-3/4 max-w-screen-lg h-auto py-2">
-    <nav class="w-auto h-12 my-3 flex items-center justify-evenly
+    <nav class="w-auto h-12 my-3 flex items-center justify-evenly mx-3
          bg-zinc-50 border border-zinc-200 rounded-lg
          dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-300 navbar">
         <div class="flex">
@@ -48,7 +48,59 @@ import ThemeToggle from "./ThemeToggle.astro";
             filter: invert(0.4) sepia(1) hue-rotate(190deg) saturate(1000%);
         }
     }
-    .nav > div > a.active {
-        background-color: blueviolet;
-    }
+    nav a.active {
+  background-color: blueviolet;
+  color: white;
+  border-radius: 8px;
+  padding: 0.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
 </style>
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+	  const menuLinks = document.querySelectorAll('nav a'); // Selecciona todos los enlaces del menú
+	  const offset = 90; // Ajusta este valor según la altura de tu menú fijo
+  
+	  menuLinks.forEach(link => {
+		link.addEventListener('click', (event) => {
+		  event.preventDefault();
+		  const targetId = link.getAttribute('href').substring(1);
+		  const targetSection = document.getElementById(targetId);
+		  if (targetSection) {
+			const topPosition = targetSection.offsetTop - offset;
+			window.scrollTo({
+			  top: topPosition,
+			  behavior: 'smooth',
+			});
+		  }
+		});
+	  });
+	});
+
+//     document.addEventListener('DOMContentLoaded', () => {
+//     const sections = document.querySelectorAll('section'); // Asegúrate de que tus secciones tengan IDs únicos
+//     const menuLinks = document.querySelectorAll('nav a');
+
+//     const highlightMenu = () => {
+//       let currentSection = '';
+//       sections.forEach(section => {
+//         const sectionTop = section.offsetTop - 100; // Ajusta este valor según el alto del menú fijo
+//         const sectionHeight = section.offsetHeight;
+//         if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
+//           currentSection = section.getAttribute('id');
+//         }
+//       });
+
+//       menuLinks.forEach(link => {
+//         link.classList.remove('active');
+//         if (link.getAttribute('href').substring(1) === currentSection) {
+//           link.classList.add('active');
+//         }
+//       });
+//     };
+
+//     window.addEventListener('scroll', highlightMenu);
+//   });
+  </script>
+  
