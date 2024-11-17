@@ -1,32 +1,37 @@
 ---
+import About from "./About.astro";
 import BtnCv from "./BtnCv.astro";
 ---
-<section id="sobre-mi" class="h-auto mb-10 p-3 flex flex-col lg:flex-row lg:items-center mt-20 lg:mt-32">
-    <article class="grow-0 p-2 flex justify-center">
-        <img class="w-40 rounded-full border-2 border-zinc-200 dark:border-neutral-700 aspect-auto" 
+<section id="sobre-mi" class="h-auto mb-20 p-5 sm:p-3 flex flex-col lg:flex-row-reverse lg:items-center mt-20 lg:mt-32">
+    <div class="p-2 flex justify-center lg:w-1/4">
+        <img class="w-44 h-44 rounded-full border-2 border-zinc-200 dark:border-neutral-700 aspect-auto" 
         src="/img-user.webp" alt="candido-dev">
-    </article>
-    <article class="grow flex flex-col items-center">
-        <h1 class="text-slate-800 dark:text-neutral-200 
-            font-extrabold text-5xl text-center p-1 mb-3">
+    </div>
+    <div class="flex flex-col lg:w-3/4">
+        <h1 class="text-slate-800 text-center lg:text-start dark:text-neutral-200 
+            font-bold text-5xl mb-3">
             ¡Hola! Soy Candido Hernández
         </h1>
-        <p class="text-slate-700 dark:text-neutral-300 font-medium text-3xl p-1 mb-1">
+        <p class="text-slate-700 text-center lg:text-start dark:text-neutral-300 
+            font-medium text-2xl mb-3 md:mb-1">
             ¡Bienvenid@ a mi esquina virtual!
         </p>
-        <p class="text-slate-700 dark:text-neutral-300 font-medium text-xl mb-1">
+        <p class="text-slate-700 text-center lg:text-start dark:text-neutral-300 
+            font-medium text-xl mb-3 md:mb-1">
             Ing. Informática | Desarrollador web
         </p>
-        <div class="w-full h-12 flex justify-center m-5">
-            <a class="flex px-12 mx-3 bg-sky-700 text-white 
-                hover:bg-transparent hover:border hover:border-sky-700 
-                hover:text-zinc-900 dark:hover:text-zinc-300 rounded-full" 
+
+        <About />
+
+        <div class="w-full flex flex-col sm:flex-row py-3">
+            <a class="p-3 sm:mr-5 text-center bg-sky-700 text-white border border-sky-700 
+                hover:bg-transparent hover:border-sky-700 hover:text-zinc-900 dark:hover:text-zinc-300 rounded-full" 
                 href="mailto:candidohm99@gmail.com">
-                <span class="flex items-center">
+                <p class="sm:mx-5">
                     Contáctame
-                </span>
+                </p>
             </a>
             <BtnCv />
         </div>
-    </article>
+    </div>
 </section>

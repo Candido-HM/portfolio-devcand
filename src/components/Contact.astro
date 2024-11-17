@@ -1,6 +1,6 @@
-<section id="contacto" data-section="contacto" class="p-3 mb-12">
+<section id="contacto" data-section="contacto" class="p-5 sm:p-3 mb-20">
     <h2 class="text-slate-700 dark:text-neutral-300 text-4xl font-bold mb-5">Contacto</h2>
-    <article class="flex justify-around bg-slate-100 dark:bg-neutral-800 dark:border-neutral-900 
+    <div class="flex justify-around bg-slate-100 dark:bg-neutral-800 dark:border-neutral-900 
         border border-slate-200 rounded-lg">
         <a class="flex justify-center py-3" href="mailto:candidohm99@gmail.com">
             <img class="w-10 dark:invert" src="/icon-email.svg" alt="link-email">
@@ -11,5 +11,11 @@
         <a class="flex justify-center py-3" href="https://github.com/Candido-HM" target="_blank">
             <img class="w-10 dark:invert" src="/icon-github.svg" alt="link-github">
         </a>
-    </article> 
+    </div> 
 </section>
+
+<style>
+    a img:hover {
+        filter: invert(0.4) sepia(10) hue-rotate(190deg) saturate(1000%);
+    }
+</style>
