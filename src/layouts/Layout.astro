@@ -26,12 +26,51 @@ const { title } = Astro.props;
 			bg-white dark:bg-neutral-900 bg-[radial-gradient(100%_50%_at_50%_0%,rgba(0,163,255,0.13)_0,rgba(0,163,255,0)_50%,rgba(0,163,255,0)_100%)]">
 		</div>
 		<slot /> 
+		<!-- <div class="custom-cursor" id="cursor"></div> -->
 	</body>
 </html>
 <style is:global>
 	html {
 		font-family: "Roboto Flex", sans-serif;
+		/* cursor: none; */
+        /* margin: 0; */
+        /* overflow: hidden; */
 		/* scroll-behavior: smooth; */
 		/* background: #13151a; */
 	}
+
+	.custom-cursor {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 3px; /* Tamaño pequeño del núcleo */
+      height: 3px;
+      pointer-events: none; /* No bloquear clics */
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.5); /* Núcleo tenue */
+      box-shadow: 
+        0 0 900px 90px rgb(206, 237, 253), /* Capa externa amplia */
+        0 0 2500px 120px rgb(225, 239, 248); /* Capa más grande y difusa */
+      z-index: 9999;
+    }
+
+	.darkl{
+		.custom-cursor {
+    		box-shadow: 
+        		0 0 900px 90px rgb(30, 64, 85), 
+        		0 0 2500px 120px rgb(8, 48, 70);  
+    		}
+			h1 {
+				color: blueviolet;
+			}
+	}
 </style>  
+
+<script>
+	const cursor = document.getElementById('cursor');
+
+	document.addEventListener('mousemove', (e) => {
+		cursor!.style.top = `${e.clientY}px`;
+        cursor!.style.left = `${e.clientX}px`;
+	});
+</script>
