@@ -1,6 +1,11 @@
+---
+import portfolio from '../data/portfolio.json';
+
+const { about } = portfolio.dataPortfolio;
+---
 <a class="p-3 mt-5 sm:mt-0 text-center text-slate-700 border border-slate-800 hover:bg-slate-700 hover:text-white 
   dark:text-neutral-300 dark:hover:bg-neutral-700 dark:border-neutral-700 rounded-full" 
-    href="/CV_Candido_Hernandez_Martin.pdf" target="_blank">
+    href={about.cvLink} target="_blank">
     <p class="sm:mx-5">
         Descargar CV
     </p>

@@ -1,8 +1,10 @@
+---
+import portfolio from '../data/portfolio.json';
+
+const { about } = portfolio.dataPortfolio;
+---
 <section class="mb-3">
     <p class="text-slate-700 dark:text-neutral-300 font-normal text-xl lg:text-lg">
-        Soy <span class="font-semibold">Ingeniero en Informática</span> especializado en <span class="font-semibold">desarrollo web</span> 
-        con <span class="font-semibold">Angular</span> y <span class="font-semibold">Bootstrap</span>,creando interfaces atractivas y responsivas. 
-        También disfruto del <span class="font-semibold">diseño UI</span>,utilizando <span class="font-semibold">Penpot</span> para prototipar y validar ideas. 
-        Mi objetivo es seguir creciendo profesionalmente y contribuir a <span class="font-semibold">productos digitales</span> innovadores.
+        {about.description}
     </p>
 </section>

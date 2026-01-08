@@ -1,16 +1,19 @@
 ---
+import portfolio from '../data/portfolio.json';
 import About from "./About.astro";
 import BtnCv from "./BtnCv.astro";
+
+const { about } = portfolio.dataPortfolio;
 ---
 <section id="sobre-mi" class="h-auto mb-20 p-5 sm:p-3 flex flex-col lg:flex-row-reverse lg:items-center mt-20 lg:mt-32">
     <div class="p-2 flex justify-center lg:w-1/4">
         <img class="w-44 h-44 rounded-full border-2 border-zinc-200 dark:border-neutral-700 aspect-auto" 
-        src="/img-user.webp" alt="candido-dev">
+        src={about.imgUser} alt="candido-dev">
     </div>
     <div class="flex flex-col lg:w-3/4">
         <h1 class="text-slate-800 text-center lg:text-start dark:text-neutral-200 
             font-bold text-5xl mb-3">
-            ¡Hola! Soy Candido Hernández
+            ¡Hola! Soy {about.name}
         </h1>
         <p class="text-slate-700 text-center lg:text-start dark:text-neutral-300 
             font-medium text-2xl mb-3 md:mb-1">
@@ -18,7 +21,7 @@ import BtnCv from "./BtnCv.astro";
         </p>
         <p class="text-slate-700 text-center lg:text-start dark:text-neutral-300 
             font-medium text-xl mb-3 md:mb-1">
-            Ing. Informática | Desarrollador web
+            {about.role}
         </p>
 
         <About />
