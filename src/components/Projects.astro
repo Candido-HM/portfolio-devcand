@@ -1,150 +1,42 @@
+---
+import portolio from '../data/portfolio.json';
+
+const { projects } = portolio.dataPortfolio;
+---
 <section class="flex flex-col p-5 sm:p-3 mb-20">
     <h2 class="text-slate-700 dark:text-neutral-300 text-4xl font-bold mb-5">Proyectos</h2>
     <article class="grid grid-cols-1 lg:grid-cols-3">
-        <div class="h-auto flex flex-col bg-slate-100 border border-slate-200 
-            dark:bg-neutral-800 dark:border-neutral-900 lg:me-4 p-3 rounded-md">
-            <img class="rounded-md border border-slate-200 aspect-video" 
-                src="/Captura_xochiCera.png" alt="galeria-web">
-            <h3 class="text-slate-700 dark:text-neutral-300 text-xl font-semibold my-3">
-                XochiCera
-            </h3>
-            <p class="text-slate-600 dark:text-neutral-300 text-base font-normal">
-                Una galería web que celebra la tradición de las artesanías en cera, optimizada para dispositivos 
-                móviles capaz de adaptarse a diferentes tamaños de pantalla, mejorando la experiencia de usuario. 
-            </p>
-            <div class="my-3">
-                <span class="bg-slate-300 dark:bg-neutral-950 p-1 me-1 text-sm 
-                    text-slate-600 dark:text-neutral-200 font-medium rounded-md">
-                    Astro
-                </span>
-                <span class="bg-slate-300 dark:bg-neutral-950 p-1 me-1 text-sm 
-                    text-slate-600 dark:text-neutral-200 font-medium rounded-md">
-                    Tailwind
-                </span>
-            </div>
-            <hr class="border-slate-400 dark:border-neutral-600 mb-3">
-            <div class="flex justify-center py-1">
-                <a href="https://github.com/Candido-HM/XochiCera" target="_blank">
-                    <img class="w-8 mx-3 dark:invert" src="/icon-github.svg" alt="link-repositorio">
-                </a>
-                <a href="https://xochicera.pages.dev/" target="_blank">
-                    <img class="w-8 mx-3 dark:invert" src="/icon-link.svg" alt="link-live">
-                </a>
-            </div>
-        </div>
-
-        <div class="h-auto flex flex-col bg-slate-100 border border-slate-200 
-            dark:bg-neutral-800 dark:border-neutral-900 mt-10 lg:mt-0 lg:me-4 p-3 rounded-md">
-             <img class="rounded-md border border-slate-200 aspect-video" src="/Captura-Sitio-ASBombeo.png" alt="captura-sitioASB">
-            <h3 class="text-slate-700 dark:text-neutral-300 text-xl font-semibold my-3">
-                Página Web Asbombeo
-            </h3>
-            <p class="text-slate-600 dark:text-neutral-300 text-base font-normal">
-                Página web de la empresa ASBombeo para mostrar los servicios que ofrece. 
-                Realizado con el sistema de gestión de contenido y plugins para facilitar el desarrollo.
-            </p>
-            <div class="my-3">
-                <span class="bg-slate-300 dark:bg-neutral-950 p-1 me-1 text-sm 
-                text-slate-600 dark:text-neutral-200 font-medium rounded-md">
-                    WordPress
-                </span>
-                <span class="bg-slate-300 dark:bg-neutral-950 p-1 me-1 text-sm 
+        {projects.map((project) => ( 
+            <div class="h-auto flex flex-col bg-slate-100 border border-slate-200 
+            dark:bg-neutral-800 dark:border-neutral-900 lg:me-4 p-3 rounded-md mb-3">
+                <img class="rounded-md border border-slate-200 aspect-video" 
+                    src={project.imgProject} alt="galeria-web"/>
+                <h3 class="text-slate-700 dark:text-neutral-300 text-xl font-semibold my-3">
+                    {project.title}
+                </h3>
+                <p class="text-slate-600 dark:text-neutral-300 text-base font-normal">
+                    {project.description}
+                </p>
+                <div class="my-3">
+                    {project.tags.map((tag) => (
+                        <span class="bg-slate-300 dark:bg-neutral-950 p-1 me-1 text-sm 
                         text-slate-600 dark:text-neutral-200 font-medium rounded-md">
-                    Blocksy
-                </span>
-                <span class="bg-slate-300 dark:bg-neutral-950 p-1 me-1 text-sm 
-                    text-slate-600 dark:text-neutral-200 font-medium rounded-md">
-                    Smart Slider
-                </span>
-                <span class="bg-slate-300 dark:bg-neutral-950 p-1 me-1 text-sm 
-                    text-slate-600 dark:text-neutral-200 font-medium rounded-md">
-                    WPForms
-                </span>
+                        {tag}
+                        </span>
+                    ))}
+                </div>
+                <hr class="border-slate-400 dark:border-neutral-600 mb-3">
+                <div class="flex justify-center py-1">
+                    {project.links && project.links.length > 0 && (
+                        project.links.map((link) => (
+                            <a href={link.linkWeb} target="_blank">
+                                <img class="w-8 mx-3 dark:invert" src={link.imgIcon} alt="link-repositorio"/>
+                            </a>
+                        ))
+                    )}
+                </div>
             </div>
-            <hr class="border-slate-400 dark:border-neutral-600 mb-3">
-            <div class="flex justify-center py-1">
-                <a href="https://www.asbombeo.com/" target="_blank">
-                    <img class="w-8 dark:invert" src="/icon-link.svg" alt="link-live">
-                </a>
-            </div>
-        </div> 
-
-        <div class="h-auto flex flex-col bg-slate-100 border border-slate-200 
-            dark:bg-neutral-800 dark:border-neutral-900 mt-10 lg:mt-0 p-3 rounded-md">
-            <img class="rounded-md border border-slate-200 aspect-video" 
-                src="/Captura_portal.png" alt="captura-app">
-            <h3 class="text-slate-700 dark:text-neutral-300 text-xl font-semibold my-3">
-                Portal de gobierno local
-            </h3>
-            <p class="text-slate-600 dark:text-neutral-300 text-base font-normal">
-                What If...? En mundo alterno, este proyecto experimental explora cómo sería un portal para un gobierno local, 
-                diseñado como una solución moderna y funcional para centralizar información y servicios.   
-            </p>
-            <div class="my-3">
-                <span class="bg-slate-300 dark:bg-neutral-950 p-1 me-1 text-sm 
-                    text-slate-600 dark:text-neutral-200 font-medium rounded-md">
-                    Astro
-                </span>
-                <span class="bg-slate-300 dark:bg-neutral-950 p-1 me-1 text-sm 
-                    text-slate-600 dark:text-neutral-200 font-medium rounded-md">
-                    Tailwind
-                </span>
-                <span class="bg-slate-300 dark:bg-neutral-950 p-1 me-1 text-sm 
-                    text-slate-600 dark:text-neutral-200 font-medium rounded-md">
-                    Flowbite
-                </span>
-            </div>
-            <hr class="border-slate-400 dark:border-neutral-600 mb-3">
-            <div class="flex justify-center py-1">
-                <a href="https://github.com/Candido-HM/Zoquiapanv2" target="_blank">
-                    <img class="w-8 mx-3 dark:invert" src="/icon-github.svg" alt="link-repositorio">
-                </a>
-                <a href="https://zoquiapanv2.pages.dev/" target="_blank">
-                    <img class="w-8 mx-3 dark:invert" src="/icon-link.svg" alt="link-live">
-                </a>
-            </div>
-        </div>
-
-        <div class="h-auto flex flex-col bg-slate-100 mt-4 border border-slate-200 
-            dark:bg-neutral-800 dark:border-neutral-900 lg:me-4 p-3 rounded-md">
-            <img class="rounded-md border border-slate-200 aspect-video" 
-                src="/Captura-App-Countries.png" alt="captura-app">
-            <h3 class="text-slate-700 dark:text-neutral-300 text-xl font-semibold my-3">
-                App de Países
-            </h3>
-            <p class="text-slate-600 dark:text-neutral-300 text-base font-normal">
-                Es una aplicación que consume datos de una API REST para obtener información detallada de cada país, 
-                además de la implementación modo claro y oscuro para adaptarse a las preferencias de usuarios.
-            </p>
-            <div class="my-3">
-                <span class="bg-slate-300 dark:bg-neutral-950 p-1 me-1 text-sm 
-                    text-slate-600 dark:text-neutral-200 font-medium rounded-md">
-                    HTML
-                </span>
-                <span class="bg-slate-300 dark:bg-neutral-950 p-1 me-1 text-sm 
-                    text-slate-600 dark:text-neutral-200 font-medium rounded-md">
-                    SASS
-                </span>
-                <span class="bg-slate-300 dark:bg-neutral-950 p-1 me-1 text-sm 
-                    text-slate-600 dark:text-neutral-200 font-medium rounded-md">
-                    Angular
-                </span>
-                <span class="bg-slate-300 dark:bg-neutral-950 p-1 me-1 text-sm 
-                    text-slate-600 dark:text-neutral-200 font-medium rounded-md">
-                    API REST
-                </span>
-            </div>
-            <hr class="border-slate-400 dark:border-neutral-600 mb-3">
-            <div class="flex justify-center py-1">
-                <a href="https://github.com/Candido-HM/app-countries" target="_blank">
-                    <img class="w-8 mx-3 dark:invert" src="/icon-github.svg" alt="link-repositorio">
-                </a>
-                <a href="https://app-countrie.netlify.app/" target="_blank">
-                    <img class="w-8 mx-3 dark:invert" src="/icon-link.svg" alt="link-live">
-                </a>
-            </div>
-        </div>
-
+        ))}
     </article> 
 </section> 
 

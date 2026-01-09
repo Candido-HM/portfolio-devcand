@@ -12,29 +12,68 @@
                 "title": "App de Países",
                 "description": "Es una aplicación que consume datos de una API REST para obtener información detallada de cada país, además de la implementación modo claro y oscuro para adaptarse a las preferencias de usuarios.",
                 "tags": ["Html", "Sass", "Angular", "API REST"],
-                "imgProject": "aqui va ir una ruta de la img",
-                "links": []
+                "imgProject": "/Captura-App-Countries.png",
+                "links": [
+                    {
+                        "type": "github",
+                        "linkWeb": "https://github.com/Candido-HM/app-countries",
+                        "imgIcon": "/icon-github.svg"
+                    },
+                    {
+                        "type": "website",
+                        "linkWeb": "https://app-countrie.netlify.app/",
+                        "imgIcon": "/icon-link.svg"
+                    }
+                ]
             },
             {
                 "title": "Portal de gobierno local",
                 "description": "What If...? En mundo alterno, este proyecto experimental explora cómo sería un portal para un gobierno local, diseñado como una solución moderna y funcional para centralizar información y servicios.",
                 "tags": ["Astro", "Tailwind", "Flowbite"],
-                "imgProject": "aqui va ir una ruta de la img",
-                "links": []
+                "imgProject": "/Captura_portal.png",
+                "links": [
+                    {
+                        "type": "github",
+                        "linkWeb": "https://github.com/Candido-HM/Zoquiapanv2",
+                        "imgIcon": "/icon-github.svg"
+                    },
+                    {
+                        "type": "website",
+                        "linkWeb": "https://zoquiapanv2.pages.dev/",
+                        "imgIcon": "/icon-link.svg"
+                    }
+                ]
             },
             {
                 "title": "Página Web Asbombeo",
                 "description": "Página web de la empresa ASBombeo para mostrar los servicios que ofrece. Realizado con el sistema de gestión de contenido y plugins para facilitar el desarrollo.",
                 "tags": ["WordPress", "Blocksy", "Smart Slider","WPForms"],
-                "imgProject": "aqui va ir una ruta de la img",
-                "links": []
+                "imgProject": "/Captura-Sitio-ASBombeo.png",
+                "links": [
+                    {
+                        "type": "website",
+                        "linkWeb": "https://www.asbombeo.com/",
+                        "imgIcon": "/icon-link.svg"
+                    }
+                ]
             },
             {
                 "title": "XochiCera",
                 "description": "Una galería web que celebra la tradición de las artesanías en cera, optimizada para dispositivos móviles capaz de adaptarse a diferentes tamaños de pantalla, mejorando la experiencia de usuario.",
-                "tags": ["Astro", "Tailwind", "Flowbite"],
-                "imgProject": "aqui va ir una ruta de la img",
-                "links": []
+                "tags": ["Astro", "Tailwind"],
+                "imgProject": "/Captura_xochiCera.png",
+                "links": [
+                    {
+                        "type": "github",
+                        "linkWeb": "https://github.com/Candido-HM/XochiCera",
+                        "imgIcon": "/icon-github.svg"
+                    },
+                    {
+                        "type": "website",
+                        "linkWeb": "https://xochicera.pages.dev/",
+                        "imgIcon": "/icon-link.svg"
+                    }
+                ]
             }
         ],
         "experience": [
